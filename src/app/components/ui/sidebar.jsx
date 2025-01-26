@@ -19,7 +19,7 @@ export const SidebarProvider = ({
   children,
   open: openProp,
   setOpen: setOpenProp,
-  animate = true
+  animate = false
 }) => {
   const [openState, setOpenState] = useState(false);
 
