@@ -11,6 +11,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { cn } from "@/app/lib/utils";
+import { FlipWords } from "@/app/components/ui/flip-words";
 
 import Management from "./Management";
 import Report from "./Report";
@@ -70,9 +71,9 @@ export default function Dashboard() {
                   key={idx}
                   link={{
                     label: link.label,
-                    href: link.href, // Pastikan `href` selalu tersedia
+                    href: "#", // Pastikan `href` selalu tersedia dengna menggunakana link.href (Href tetap "#", sehingga tidak berpindah halaman)
                     icon: link.icon,
-                    onClick: () => setActivePage(link.value), // Jika ingin menggunakan navigasi state
+                    onClick: () => setActivePage("Dashboard"), // Jika ingin menggunakan navigasi state gunakan link.value
                   }}
                   className={cn(
                     "cursor-pointer",
@@ -90,7 +91,7 @@ export default function Dashboard() {
             <SidebarLink
               link={{
                 label: "Jeffan Dasa",
-                href: "",
+                href: "#",
                 icon: (
                   <Image
                     src='https://assets.aceternity.com/manu.png'
@@ -108,10 +109,11 @@ export default function Dashboard() {
 
       {/* Konten Utama setiap pages pada dasboarad*/}
       <div className='flex-1 p-4'>
+        {/* <DashboardContent /> */}
         {activePage === "Dashboard" && <DashboardContent />}
-        {activePage === "Management" && <Management />}
-        {activePage === "Report" && <Report />}
-        {activePage === "Profile" && <Chart />}
+        {activePage === "Dashboard" && <Management />}
+        {activePage === "Dashboard" && <Chart />}
+        {/* {activePage === "Profile" && <Chart />} */}
       </div>
     </div>
   );
@@ -154,14 +156,13 @@ export const Logo = () => {
 
 // Komponen Halaman Dashboard
 const DashboardContent = () => {
+  const words = ["Like", "View", "Subscribe"];
   return (
-    <div className='p-4 bg-white dark:bg-neutral-900 rounded-lg shadow-md'>
-      <h1 className='text-xl font-semibold text-black dark:text-white'>
-        Selamat Datang di Dashboard!
+    <div className='p-4 bg-white dark:bg-neutral-900 rounded-lg shadow-md mb-5'>
+      <h1 className='flex text-xl font-semibold text-black dark:text-white justify-center pb-3'>
+      Profile Overview
+      <FlipWords words={words} />
       </h1>
-      <p className='text-gray-700 dark:text-gray-400'>
-        Pilih menu di sidebar untuk melihat konten lainnya.
-      </p>
     </div>
   );
 };

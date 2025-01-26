@@ -1,56 +1,55 @@
 {
-    "charts": [
-      {
-        "title": "Jumlah View Perbulan 2024",
-        "data": [
-          { "month": "January", "value": 1200 },
-          { "month": "February", "value": 1500 },
-          { "month": "March", "value": 1800 },
-          { "month": "April", "value": 2100 },
-          { "month": "May", "value": 2300 },
-          { "month": "June", "value": 2500 },
-          { "month": "July", "value": 2700 },
-          { "month": "August", "value": 3000 },
-          { "month": "September", "value": 3200 },
-          { "month": "October", "value": 3500 },
-          { "month": "November", "value": 3700 },
-          { "month": "December", "value": 4000 }
-        ]
-      },
-      {
-        "title": "Jumlah Like Perbulan 2024",
-        "data": [
-          { "month": "January", "value": 200 },
-          { "month": "February", "value": 300 },
-          { "month": "March", "value": 400 },
-          { "month": "April", "value": 500 },
-          { "month": "May", "value": 600 },
-          { "month": "June", "value": 700 },
-          { "month": "July", "value": 800 },
-          { "month": "August", "value": 900 },
-          { "month": "September", "value": 1000 },
-          { "month": "October", "value": 1100 },
-          { "month": "November", "value": 1200 },
-          { "month": "December", "value": 1300 }
-        ]
-      },
-      {
-        "title": "Jumlah Subscribe Perbulan 2024",
-        "data": [
-          { "month": "January", "value": 100 },
-          { "month": "February", "value": 150 },
-          { "month": "March", "value": 200 },
-          { "month": "April", "value": 250 },
-          { "month": "May", "value": 300 },
-          { "month": "June", "value": 350 },
-          { "month": "July", "value": 400 },
-          { "month": "August", "value": 450 },
-          { "month": "September", "value": 500 },
-          { "month": "October", "value": 550 },
-          { "month": "November", "value": 600 },
-          { "month": "December", "value": 650 }
-        ]
-      }
-    ]
-  }
-  
+  "charts": [
+    {
+      "title": "Jumlah View Perbulan 2024",
+      "data": [
+        { "month": "January", "value": 2500 },
+        { "month": "February", "value": 1200 },
+        { "month": "March", "value": 3500 },
+        { "month": "April", "value": 2700 },
+        { "month": "May", "value": 1800 },
+        { "month": "June", "value": 3000 },
+        { "month": "July", "value": 1500 },
+        { "month": "August", "value": 4000 },
+        { "month": "September", "value": 2100 },
+        { "month": "October", "value": 2300 },
+        { "month": "November", "value": 3700 },
+        { "month": "December", "value": 3200 }
+      ]
+    },
+    {
+      "title": "Jumlah Like Perbulan 2024",
+      "data": [
+        { "month": "January", "value": 800 },
+        { "month": "February", "value": 400 },
+        { "month": "March", "value": 1200 },
+        { "month": "April", "value": 300 },
+        { "month": "May", "value": 900 },
+        { "month": "June", "value": 200 },
+        { "month": "July", "value": 1300 },
+        { "month": "August", "value": 600 },
+        { "month": "September", "value": 1100 },
+        { "month": "October", "value": 1000 },
+        { "month": "November", "value": 500 },
+        { "month": "December", "value": 700 }
+      ]
+    },
+    {
+      "title": "Jumlah Subscribe Perbulan 2024",
+      "data": [
+        { "month": "January", "value": 400 },
+        { "month": "February", "value": 250 },
+        { "month": "March", "value": 650 },
+        { "month": "April", "value": 100 },
+        { "month": "May", "value": 500 },
+        { "month": "June", "value": 300 },
+        { "month": "July", "value": 200 },
+        { "month": "August", "value": 600 },
+        { "month": "September", "value": 450 },
+        { "month": "October", "value": 350 },
+        { "month": "November", "value": 150 },
+        { "month": "December", "value": 550 }
+      ]
+    }
+  ]
+}

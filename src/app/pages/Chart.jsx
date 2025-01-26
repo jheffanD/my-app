@@ -1,54 +1,103 @@
-import React, { useState } from "react";
+import React from "react";
+import { Line, Bar } from "react-chartjs-2";
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend,
+} from "chart.js";
 import chartData from "./chartData.json"; // Pastikan file JSON ini ada di direktori yang sama
 
-const ProfileHeader = () => {
-  const [selectedMonth, setSelectedMonth] = useState("January");
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend
+);
 
-  const handleMonthChange = (event) => {
-    setSelectedMonth(event.target.value);
+const ChartView = () => {
+  const dataView = {
+    labels: chartData.charts[0].data.map((item) => item.month),
+    datasets: [
+      {
+        label: "Jumlah View",
+        data: chartData.charts[0].data.map((item) => item.value),
+        borderColor: "#4caf50",
+        backgroundColor: "rgba(76, 175, 80, 0.2)",
+        tension: 0.3,
+      },
+    ],
   };
 
   return (
-    <header className="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow-md text-center">
-      <h1 className="text-2xl font-bold mb-4 text-gray-900 dark:text-gray-100">
-        Profile Overview
-      </h1>
-      <div className="mb-4">
-        <label htmlFor="month" className="block text-gray-700 dark:text-gray-300 mb-2">
-          Select Month:
-        </label>
-        <select
-          id="month"
-          value={selectedMonth}
-          onChange={handleMonthChange}
-          className="p-2 border rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
-        >
-          {chartData.charts[0].data.map((item) => (
-            <option key={item.month} value={item.month}>
-              {item.month}
-            </option>
-          ))}
-        </select>
+    <div className="bg-gray-100 rounded-lg ml-3 md:w-1/3">
+      <h2 className="text-lg font-bold mb-4 text-center">Grafik View</h2>
+      <Line data={dataView} />
+    </div>
+  );
+};
+
+const ChartLike = () => {
+  const dataLike = {
+    labels: chartData.charts[1].data.map((item) => item.month),
+    datasets: [
+      {
+        label: "Jumlah Like",
+        data: chartData.charts[1].data.map((item) => item.value),
+        borderColor: "#2196f3",
+        backgroundColor: "rgba(33, 150, 243, 0.2)",
+        tension: 0.3,
+      },
+    ],
+  };
+
+  return (
+    <div className="bg-gray-100 rounded-lg md:w-1/3">
+      <h2 className="text-lg font-bold mb-4 text-center">Grafik Like</h2>
+      <Line data={dataLike} />
+    </div>
+  );
+};
+
+const ChartSubscribe = () => {
+  const dataSubscribe = {
+    labels: chartData.charts[2].data.map((item) => item.month),
+    datasets: [
+      {
+        label: "Jumlah Subscribe",
+        data: chartData.charts[2].data.map((item) => item.value),
+        backgroundColor: "#ff5722",
+        borderColor: "#ff5722",
+      },
+    ],
+  };
+
+  return (
+    <div className="bg-gray-100 rounded-lg mr-3 md:w-1/3">
+      <h2 className="text-lg font-bold mb-4 text-center">Grafik Subscribe</h2>
+      <Bar data={dataSubscribe} />
+    </div>
+  );
+};
+
+const ProfileHeader = () => {
+  return (
+    <div className="container mx-auto py-6 overflow-x-auto mt-5 bg-white rounded-lg">
+      <div className="flex flex-wrap md:flex-nowrap gap-2">
+        <ChartView />
+        <ChartLike />
+        <ChartSubscribe />
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-        {chartData.charts.map((chart, index) => {
-          const selectedData = chart.data.find((item) => item.month === selectedMonth);
-          return (
-            <div key={index} className="bg-white dark:bg-gray-700 p-4 rounded-lg shadow">
-              <h2 className="text-lg font-semibold mb-2 text-gray-800 dark:text-gray-200">
-                {chart.title}
-              </h2>
-              <p className="text-3xl font-bold text-blue-500 dark:text-blue-300">
-                {selectedData ? selectedData.value : 0}
-              </p>
-              <p className="text-sm text-gray-600 dark:text-gray-400">
-                Data for {selectedMonth} 2024
-              </p>
-            </div>
-          );
-        })}
-      </div>
-    </header>
+    </div>
   );
 };
 
