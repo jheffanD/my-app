@@ -7,6 +7,7 @@ const [activePage, setActivePage] = useState("Dashboard"); // State untuk menent
 - Fungsi setActivePage: Digunakan untuk mengubah nilai activePage ketika pengguna memilih menu di sidebar.
 
 Setiap kali pengguna mengklik salah satu menu di sidebar, fungsi onClick akan dipanggil:
+
 onClick: () => setActivePage(link.value),
 
 State activePage akan diperbarui dengan nilai link.value, dan komponen utama akan menampilkan konten yang sesuai berdasarkan kondisi berikut:
