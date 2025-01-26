@@ -23,7 +23,7 @@ export default function Dashboard() {
     {
       label: "Dashboard",
       value: "Dashboard",
-      // href: "/", // Tambahkan nilai href
+  
       icon: (
         <IconBrandTabler className='text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0' />
       ),
@@ -31,7 +31,7 @@ export default function Dashboard() {
     {
       label: "Management",
       value: "Management",
-      // href: "/Management", // Tambahkan nilai href
+     
       icon: (
         <IconUserBolt className='text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0' />
       ),
@@ -106,7 +106,7 @@ export default function Dashboard() {
         </SidebarBody>
       </Sidebar>
 
-      {/* Konten Utama */}
+      {/* Konten Utama setiap pages pada dasboarad*/}
       <div className='flex-1 p-4'>
         {activePage === "Dashboard" && <DashboardContent />}
         {activePage === "Management" && <Management />}
